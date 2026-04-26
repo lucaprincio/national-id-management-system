@@ -21,6 +21,7 @@
 /home/tsalou/Projet/Projet_JAVA/cin-system/backend/src/main/java/com/cin/system/enums/StatutDemande.java
 /home/tsalou/Projet/Projet_JAVA/cin-system/backend/src/main/java/com/cin/system/controller/DashboardController.java
 /home/tsalou/Projet/Projet_JAVA/cin-system/backend/src/main/java/com/cin/system/config/SecurityConfig.java
+/home/tsalou/Projet/Projet_JAVA/cin-system/backend/src/main/java/com/cin/system/security/UserDetailsServiceImpl.java
 /home/tsalou/Projet/Projet_JAVA/cin-system/backend/src/main/java/com/cin/system/controller/DemandeController.java
 /home/tsalou/Projet/Projet_JAVA/cin-system/backend/src/main/java/com/cin/system/security/JwtFilter.java
 /home/tsalou/Projet/Projet_JAVA/cin-system/backend/src/main/java/com/cin/system/repository/UserRepository.java

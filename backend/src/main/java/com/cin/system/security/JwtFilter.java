@@ -8,7 +8,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -20,7 +19,9 @@ import java.io.IOException;
 public class JwtFilter extends OncePerRequestFilter {
 
     private final JwtUtil jwtUtil;
-    private final UserDetailsService userDetailsService;
+    // Injection directe de l'implémentation concrète, pas de l'interface
+    // (évite l'ambiguïté avec le bean UserDetailsService de SecurityConfig)
+    private final UserDetailsServiceImpl userDetailsService;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request,
@@ -36,7 +37,7 @@ public class JwtFilter extends OncePerRequestFilter {
             try {
                 email = jwtUtil.extractUsername(jwt);
             } catch (Exception e) {
-                // Invalid token
+                // Token invalide — on ignore
             }
         }
 
